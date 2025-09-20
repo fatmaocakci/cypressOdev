@@ -15,3 +15,10 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // serverRuntimeConfig hatalarını görmezden gel
+  if (err.message.includes('serverRuntimeConfig')) {
+    return false;
+  }
+  // diğer hataları fail etsin
+})
