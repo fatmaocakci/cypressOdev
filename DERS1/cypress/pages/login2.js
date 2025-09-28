@@ -48,6 +48,30 @@ cy.get(this.forgetPassword).should("be.visible").and("have.text",text);
 }
 
 
+enterEmail(email){
+cy.get(this.email).type(email);
+
+}
+
+
+enterPassword(password){
+cy.get(this.password).type(password);
+
+}
+
+clickLoginButton(){
+cy.get(this.loginButton).click();
+
+
+}
+login(email,password){
+this.navigateUrl();
+this.enterEmail(email);
+this.enterPassword(password);
+this.clickLoginButton();
+
+}
+
 
 }
 
