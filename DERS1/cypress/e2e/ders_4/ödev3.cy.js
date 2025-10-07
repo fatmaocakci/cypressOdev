@@ -2,9 +2,9 @@ describe("API Test Suite", () => {
   const CAT_BASE = "https://catfact.ninja";
   const JSON_PLACEHOLDER = "https://jsonplaceholder.typicode.com";
 
-  // ------------------------
+ 
   // 1. GET: Cat Facts
-  // ------------------------
+ 
   it("GET /fact → rastgele kedi bilgisi dönmeli", () => {
     cy.request(`${CAT_BASE}/fact`).then((resp) => {
       expect(resp.status).to.eq(200);
@@ -15,9 +15,9 @@ describe("API Test Suite", () => {
     });
   });
 
-  // ------------------------
+ 
   // 2. GET: query param (dinamik limit)
-  // ------------------------
+ 
   it("GET /facts?limit=N → dinamik limit ile veri gelmeli", () => {
     const randomLimit = Math.floor(Math.random() * 5) + 1; // 1-5 arası
     cy.request(`${CAT_BASE}/facts?limit=${randomLimit}`).then((resp) => {
@@ -26,9 +26,9 @@ describe("API Test Suite", () => {
     });
   });
 
-  // ------------------------
+  
   // 3. GET: özel header ile
-  // ------------------------
+  
   it("GET /fact → özel header ile istek", () => {
     cy.request({
       method: "GET",
@@ -43,9 +43,9 @@ describe("API Test Suite", () => {
     });
   });
 
-  // ------------------------
+  
   // 4. GET: geçersiz endpoint
-  // ------------------------
+  
   it("GET /cats → 404 dönmeli", () => {
     cy.request({
       url: `${CAT_BASE}/cats`,
@@ -55,9 +55,9 @@ describe("API Test Suite", () => {
     });
   });
 
-  // ------------------------
+  
   // 5. POST: yeni post oluşturma
-  // ------------------------
+ 
   it("POST /posts → yeni post oluşturulmalı", () => {
     cy.request("POST", `${JSON_PLACEHOLDER}/posts`, {
       title: "foo",
@@ -74,9 +74,9 @@ describe("API Test Suite", () => {
     });
   });
 
-  // ------------------------
+ 
   // 6. PUT: post güncelleme
-  // ------------------------
+ 
   it("PUT /posts/1 → post güncellenmeli", () => {
     cy.request("PUT", `${JSON_PLACEHOLDER}/posts/1`, {
       id: 1,
@@ -90,9 +90,9 @@ describe("API Test Suite", () => {
     });
   });
 
-  // ------------------------
+
   // 7. PATCH: kısmi güncelleme
-  // ------------------------
+
   it("PATCH /posts/1 → başlık güncellenmeli", () => {
     cy.request("PATCH", `${JSON_PLACEHOLDER}/posts/1`, {
       title: "patched title",
@@ -102,18 +102,18 @@ describe("API Test Suite", () => {
     });
   });
 
-  // ------------------------
+ 
   // 8. DELETE: post silme
-  // ------------------------
+  
   it("DELETE /posts/1 → başarılı olmalı", () => {
     cy.request("DELETE", `${JSON_PLACEHOLDER}/posts/1`).then((resp) => {
       expect(resp.status).to.eq(200);
     });
   });
 
-  // ------------------------
+  
   // 9. Yanıt gövdesi format kontrolü
-  // ------------------------
+
   it("GET /facts → JSON formatında dönmeli", () => {
     cy.request(`${CAT_BASE}/facts`).then((resp) => {
       expect(resp.status).to.eq(200);
@@ -124,9 +124,9 @@ describe("API Test Suite", () => {
     });
   });
 
-  // ------------------------
+
   // 10. Performans testi
-  // ------------------------
+
   it("GET /breeds → yanıt süresi 1000ms altında olmalı", () => {
     cy.request(`${CAT_BASE}/breeds`).then((resp) => {
       expect(resp.status).to.eq(200);

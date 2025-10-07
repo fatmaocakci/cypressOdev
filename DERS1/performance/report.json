@@ -1,0 +1,266 @@
+{
+  "aggregate": {
+    "counters": {
+      "vusers.created_by_name.Create Post": 1,
+      "vusers.created": 1,
+      "http.requests": 1,
+      "http.codes.200": 1,
+      "http.responses": 1,
+      "http.downloaded_bytes": 0,
+      "plugins.metrics-by-endpoint./posts/1.codes.200": 1,
+      "errors.an URL must be specified": 1,
+      "vusers.failed": 1
+    },
+    "rates": {
+      "http.request_rate": 1
+    },
+    "firstCounterAt": 1759868755455,
+    "firstHistogramAt": 1759868758389,
+    "lastCounterAt": 1759868758637,
+    "lastHistogramAt": 1759868758633,
+    "firstMetricAt": 1759868755455,
+    "lastMetricAt": 1759868758637,
+    "period": 1759868750000,
+    "summaries": {
+      "http.response_time": {
+        "min": 90,
+        "max": 90,
+        "count": 1,
+        "mean": 90,
+        "p50": 89.1,
+        "median": 89.1,
+        "p75": 89.1,
+        "p90": 89.1,
+        "p95": 89.1,
+        "p99": 89.1,
+        "p999": 89.1
+      },
+      "http.response_time.2xx": {
+        "min": 90,
+        "max": 90,
+        "count": 1,
+        "mean": 90,
+        "p50": 89.1,
+        "median": 89.1,
+        "p75": 89.1,
+        "p90": 89.1,
+        "p95": 89.1,
+        "p99": 89.1,
+        "p999": 89.1
+      },
+      "plugins.metrics-by-endpoint.server-timing./posts/1": {
+        "min": -1,
+        "max": -1,
+        "count": 1,
+        "mean": -1,
+        "p50": -1,
+        "median": -1,
+        "p75": -1,
+        "p90": -1,
+        "p95": -1,
+        "p99": -1,
+        "p999": -1
+      },
+      "plugins.metrics-by-endpoint.response_time./posts/1": {
+        "min": 90,
+        "max": 90,
+        "count": 1,
+        "mean": 90,
+        "p50": 89.1,
+        "median": 89.1,
+        "p75": 89.1,
+        "p90": 89.1,
+        "p95": 89.1,
+        "p99": 89.1,
+        "p999": 89.1
+      }
+    },
+    "histograms": {
+      "http.response_time": {
+        "min": 90,
+        "max": 90,
+        "count": 1,
+        "mean": 90,
+        "p50": 89.1,
+        "median": 89.1,
+        "p75": 89.1,
+        "p90": 89.1,
+        "p95": 89.1,
+        "p99": 89.1,
+        "p999": 89.1
+      },
+      "http.response_time.2xx": {
+        "min": 90,
+        "max": 90,
+        "count": 1,
+        "mean": 90,
+        "p50": 89.1,
+        "median": 89.1,
+        "p75": 89.1,
+        "p90": 89.1,
+        "p95": 89.1,
+        "p99": 89.1,
+        "p999": 89.1
+      },
+      "plugins.metrics-by-endpoint.server-timing./posts/1": {
+        "min": -1,
+        "max": -1,
+        "count": 1,
+        "mean": -1,
+        "p50": -1,
+        "median": -1,
+        "p75": -1,
+        "p90": -1,
+        "p95": -1,
+        "p99": -1,
+        "p999": -1
+      },
+      "plugins.metrics-by-endpoint.response_time./posts/1": {
+        "min": 90,
+        "max": 90,
+        "count": 1,
+        "mean": 90,
+        "p50": 89.1,
+        "median": 89.1,
+        "p75": 89.1,
+        "p90": 89.1,
+        "p95": 89.1,
+        "p99": 89.1,
+        "p999": 89.1
+      }
+    }
+  },
+  "intermediate": [
+    {
+      "counters": {
+        "vusers.created_by_name.Create Post": 1,
+        "vusers.created": 1,
+        "http.requests": 1,
+        "http.codes.200": 1,
+        "http.responses": 1,
+        "plugins.metrics-by-endpoint./posts/1.codes.200": 1,
+        "errors.an URL must be specified": 1,
+        "vusers.failed": 1
+      },
+      "rates": {
+        "http.request_rate": 1
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1759868755455,
+      "firstHistogramAt": 1759868758389,
+      "lastCounterAt": 1759868758637,
+      "lastHistogramAt": 1759868758633,
+      "firstMetricAt": 1759868755455,
+      "lastMetricAt": 1759868758637,
+      "period": "1759868750000",
+      "summaries": {
+        "http.response_time": {
+          "min": 90,
+          "max": 90,
+          "count": 1,
+          "mean": 90,
+          "p50": 89.1,
+          "median": 89.1,
+          "p75": 89.1,
+          "p90": 89.1,
+          "p95": 89.1,
+          "p99": 89.1,
+          "p999": 89.1
+        },
+        "http.response_time.2xx": {
+          "min": 90,
+          "max": 90,
+          "count": 1,
+          "mean": 90,
+          "p50": 89.1,
+          "median": 89.1,
+          "p75": 89.1,
+          "p90": 89.1,
+          "p95": 89.1,
+          "p99": 89.1,
+          "p999": 89.1
+        },
+        "plugins.metrics-by-endpoint.server-timing./posts/1": {
+          "min": -1,
+          "max": -1,
+          "count": 1,
+          "mean": -1,
+          "p50": -1,
+          "median": -1,
+          "p75": -1,
+          "p90": -1,
+          "p95": -1,
+          "p99": -1,
+          "p999": -1
+        },
+        "plugins.metrics-by-endpoint.response_time./posts/1": {
+          "min": 90,
+          "max": 90,
+          "count": 1,
+          "mean": 90,
+          "p50": 89.1,
+          "median": 89.1,
+          "p75": 89.1,
+          "p90": 89.1,
+          "p95": 89.1,
+          "p99": 89.1,
+          "p999": 89.1
+        }
+      },
+      "histograms": {
+        "http.response_time": {
+          "min": 90,
+          "max": 90,
+          "count": 1,
+          "mean": 90,
+          "p50": 89.1,
+          "median": 89.1,
+          "p75": 89.1,
+          "p90": 89.1,
+          "p95": 89.1,
+          "p99": 89.1,
+          "p999": 89.1
+        },
+        "http.response_time.2xx": {
+          "min": 90,
+          "max": 90,
+          "count": 1,
+          "mean": 90,
+          "p50": 89.1,
+          "median": 89.1,
+          "p75": 89.1,
+          "p90": 89.1,
+          "p95": 89.1,
+          "p99": 89.1,
+          "p999": 89.1
+        },
+        "plugins.metrics-by-endpoint.server-timing./posts/1": {
+          "min": -1,
+          "max": -1,
+          "count": 1,
+          "mean": -1,
+          "p50": -1,
+          "median": -1,
+          "p75": -1,
+          "p90": -1,
+          "p95": -1,
+          "p99": -1,
+          "p999": -1
+        },
+        "plugins.metrics-by-endpoint.response_time./posts/1": {
+          "min": 90,
+          "max": 90,
+          "count": 1,
+          "mean": 90,
+          "p50": 89.1,
+          "median": 89.1,
+          "p75": 89.1,
+          "p90": 89.1,
+          "p95": 89.1,
+          "p99": 89.1,
+          "p999": 89.1
+        }
+      }
+    }
+  ]
+}

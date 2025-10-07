@@ -1,0 +1,58 @@
+config:
+  target: "https://jsonplaceholder.typicode.com"
+  phases:
+    - duration: 10
+      arrivalRate: 2
+      name: "Goit Ödev 4 Test"
+
+
+  payload: 
+    - path: "ödev4.csv"
+      fields:
+        - "title"
+        - "body"
+        - "userId"
+
+  verbose: true
+
+scenarios:
+  - name: "Create Post"
+    flow:
+      - get:
+          url: "/posts/1"
+          capture:
+            - json: "$.id"
+              as: "firstPostId"
+      
+      - expect:
+          - "http.response_time < 1000"
+          - "http.codes.200 == 1"
+          - "http.response_time.mean < 600"
+      
+      - post:
+          url: "/posts"
+          headers:
+            Content-Type: "application/json"
+          json:
+            title: "{{ title }}"
+            body: "{{ body }}"
+            userId: "{{ userId }}"
+          capture:
+            - json: "$.id"
+              as: "createdId"
+            - json: "$.title"
+              as: "createdTitle"
+
+      - expect:
+          - "http.codes.201 == 1"
+          - "http.response_time < 1200"
+          - "http.response_time.mean < 800"
+
+      - log: "First id: {{ firstPostId }}"
+      - log: "Created post id: {{ createdId }}, title: {{ createdTitle }}"
+
+ensure:
+  thresholds:
+    - http.response_time.p95: 1000
+    - http.response_time.mean: 700
+    - http.codes.2xx: 95
