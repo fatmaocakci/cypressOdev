@@ -1,0 +1,57 @@
+name: CI-CD Pipeline        # isim vermek için kullanılır
+
+on:
+  workflow_dispatch: # manuel olarak kodumuzu çalıştırmamızı sağlar
+  schedule: #kodumuzu hangi zaman aralıklarında çalıştırmak istiyoruz
+    -cron: " 0 8 * * * "  # her gün saat 8 de çalışsın
+    push:  #main branche push yapıldığında çalışsın
+      branches:
+        -main
+  pull_request:
+
+  jobs:
+  build: #ilk job
+    runs-on: ubuntu-latest
+    name: Build job
+    steps:
+      -name: checkout repository
+      uses: actions/checkout@v3
+
+      -name: Echo user login
+      run: echo "hello, ${{ github.actor }}"
+  test: #ikinci job
+    runs-on: ubuntu-latest
+    name: Cypress test job
+    container:
+      image: cypress /base:latest #cypress docker cont. kurmuş oluyoruz
+    steps:
+      -name: checkout repository
+      uses: actions/checkout@v3
+      
+      -name: setup node.js #node.js kuruyoruz
+      uses: actions/setup-node@v3
+      with:
+         node-version: "18"
+
+      -name: install dependencies #projenin bağımlıklarını yüklüyoruz
+      uses: npm install
+
+      -name: run cypress test #testimizi çalıştırıyoruz
+      uses: npx cypress run
+
+      -name: upload cypress videos #otomasyondaki videoları kaydediyoruz
+      if: always() #test başarısız olsa bile videolar yüklensin
+      uses: actions/upload-artifact@v3
+      with:
+        name: cypress-videos
+        path: cypress/videos
+        retention-days: 1 #videolar 1 gün saklansın
+
+      -name: upload cypress screenshots #otomasyondaki ekran görüntülerini kaydediyoruz
+      if: always() #test başarısız olsa bile ekran görüntüleri yüklensin
+      uses: actions/upload-artifact@v3
+      with:
+        name: cypress-screenshots
+        path: cypress/screenshots
+        retention-days: 1 #ekran görüntüleri 1 gün saklansın
+

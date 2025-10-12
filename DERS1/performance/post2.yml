@@ -2,8 +2,8 @@
 config:
   target: "http://httpbin.org"
   phases:
-    - duration: 1
-      arrivalRate: 1
+    - duration: 2
+      arrivalRate: 2
       name: "Goit Performance Test"
   payload:
     - path: "abc.csv"
